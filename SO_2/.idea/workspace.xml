@@ -15,23 +15,23 @@
       <file leaf-file-name="DiscAccessRequest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Disc_Access/DiscAccessRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="325">
+              <caret line="32" column="79" lean-forward="false" selection-start-line="32" selection-start-column="79" selection-end-line="32" selection-end-column="79" />
               <folding>
                 <element signature="e#653#654#0" expanded="true" />
                 <element signature="e#690#691#0" expanded="true" />
-                <element signature="e#901#902#0" expanded="true" />
-                <element signature="e#938#939#0" expanded="true" />
-                <element signature="e#995#996#0" expanded="true" />
-                <element signature="e#1047#1048#0" expanded="true" />
-                <element signature="e#1084#1085#0" expanded="true" />
-                <element signature="e#1120#1121#0" expanded="true" />
-                <element signature="e#1175#1176#0" expanded="true" />
-                <element signature="e#1225#1226#0" expanded="true" />
-                <element signature="e#1266#1267#0" expanded="true" />
-                <element signature="e#1306#1307#0" expanded="true" />
-                <element signature="e#1369#1370#0" expanded="true" />
-                <element signature="e#1427#1428#0" expanded="true" />
+                <element signature="e#1086#1087#0" expanded="true" />
+                <element signature="e#1123#1124#0" expanded="true" />
+                <element signature="e#1180#1181#0" expanded="true" />
+                <element signature="e#1232#1233#0" expanded="true" />
+                <element signature="e#1269#1270#0" expanded="true" />
+                <element signature="e#1305#1306#0" expanded="true" />
+                <element signature="e#1360#1361#0" expanded="true" />
+                <element signature="e#1410#1411#0" expanded="true" />
+                <element signature="e#1451#1452#0" expanded="true" />
+                <element signature="e#1491#1492#0" expanded="true" />
+                <element signature="e#1554#1555#0" expanded="true" />
+                <element signature="e#1612#1613#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -40,7 +40,7 @@
       <file leaf-file-name="Direction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/Direction/Direction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
+            <state relative-caret-position="90">
               <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
@@ -50,45 +50,39 @@
       <file leaf-file-name="DiscSchedulingAlgorithm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/DiscSchedulingAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="903">
-              <caret line="43" column="12" lean-forward="false" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+            <state relative-caret-position="721">
+              <caret line="93" column="35" lean-forward="false" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#583#584#0" expanded="true" />
-                <element signature="e#629#630#0" expanded="true" />
-                <element signature="e#2584#2585#0" expanded="true" />
-                <element signature="e#2633#2634#0" expanded="true" />
-                <element signature="e#2676#2677#0" expanded="true" />
-                <element signature="e#2717#2718#0" expanded="true" />
+                <element signature="e#619#620#0" expanded="true" />
+                <element signature="e#665#666#0" expanded="true" />
+                <element signature="e#2620#2621#0" expanded="true" />
+                <element signature="e#2669#2670#0" expanded="true" />
+                <element signature="e#2899#2900#0" expanded="true" />
+                <element signature="e#2940#2941#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DiscSchedulingAlgorithmTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DiscSchedulingAlgorithmTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tests/Disc_Scheduling/DiscSchedulingAlgorithmTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <element signature="e#432#433#0" expanded="true" />
-                <element signature="e#513#514#0" expanded="true" />
-                <element signature="e#545#546#0" expanded="true" />
-                <element signature="e#626#627#0" expanded="true" />
-                <element signature="e#847#848#0" expanded="true" />
-                <element signature="e#929#930#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="183">
+              <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EDF.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EDF.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/EDF.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="127">
+              <caret line="66" column="57" lean-forward="false" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#243#274#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -97,7 +91,7 @@
       <file leaf-file-name="FDSCAN.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/FDSCAN.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
+            <state relative-caret-position="144">
               <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -109,8 +103,8 @@
       <file leaf-file-name="FCFS.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/FCFS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-257">
-              <caret line="17" column="90" lean-forward="false" selection-start-line="17" selection-start-column="90" selection-end-line="17" selection-end-column="90" />
+            <state relative-caret-position="559">
+              <caret line="77" column="77" lean-forward="true" selection-start-line="59" selection-start-column="16" selection-end-line="77" selection-end-column="77" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,8 +115,8 @@
       <file leaf-file-name="SSTF.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/SSTF.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="15" column="90" lean-forward="false" selection-start-line="15" selection-start-column="90" selection-end-line="15" selection-end-column="90" />
+            <state relative-caret-position="361">
+              <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,11 +127,10 @@
       <file leaf-file-name="SCAN.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/SCAN.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="85" column="47" lean-forward="false" selection-start-line="85" selection-start-column="47" selection-end-line="85" selection-end-column="47" />
+            <state relative-caret-position="379">
+              <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="30" selection-end-column="83" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#544#575#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -146,11 +139,10 @@
       <file leaf-file-name="CSCAN.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/CSCAN.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="68" column="43" lean-forward="false" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+            <state relative-caret-position="378">
+              <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#502#533#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -180,15 +172,15 @@
         <option value="$PROJECT_DIR$/src/Exceptions/ImpossibleToSimulateException.java" />
         <option value="$PROJECT_DIR$/src/Disc_Access/FCFS.java" />
         <option value="$PROJECT_DIR$/src/Disc_Scheduling/Direction/Direction.java" />
-        <option value="$PROJECT_DIR$/src/Disc_Scheduling/DiscSchedulingAlgorithm.java" />
-        <option value="$PROJECT_DIR$/src/Disc_Access/DiscAccessRequest.java" />
-        <option value="$PROJECT_DIR$/src/Disc_Scheduling/SSTF.java" />
-        <option value="$PROJECT_DIR$/src/Disc_Scheduling/FCFS.java" />
-        <option value="$PROJECT_DIR$/src/Disc_Scheduling/EDF.java" />
         <option value="$PROJECT_DIR$/src/Disc_Scheduling/FDSCAN.java" />
+        <option value="$PROJECT_DIR$/Tests/Disc_Scheduling/DiscSchedulingAlgorithmTest.java" />
+        <option value="$PROJECT_DIR$/src/Disc_Scheduling/DiscSchedulingAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/Disc_Scheduling/FCFS.java" />
+        <option value="$PROJECT_DIR$/src/Disc_Scheduling/SSTF.java" />
         <option value="$PROJECT_DIR$/src/Disc_Scheduling/SCAN.java" />
         <option value="$PROJECT_DIR$/src/Disc_Scheduling/CSCAN.java" />
-        <option value="$PROJECT_DIR$/Tests/Disc_Scheduling/DiscSchedulingAlgorithmTest.java" />
+        <option value="$PROJECT_DIR$/src/Disc_Access/DiscAccessRequest.java" />
+        <option value="$PROJECT_DIR$/src/Disc_Scheduling/EDF.java" />
       </list>
     </option>
   </component>
@@ -198,10 +190,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-9" />
     <option name="width" value="1439" />
-    <option name="height" value="1309" />
+    <option name="height" value="1102" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -218,10 +210,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -244,6 +235,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -257,6 +249,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -281,7 +274,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DiscSchedulingAlgorithmTest">
+  <component name="RunManager" selected="JUnit.DiscSchedulingAlgorithmTest.EDFTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -302,6 +295,26 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+    </configuration>
+    <configuration name="All in SO_2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="SO_2" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
     </configuration>
     <configuration name="DiscSchedulingAlgorithmTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
@@ -353,7 +366,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="DiscSchedulingAlgorithmTest.FCFSTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiscSchedulingAlgorithmTest.EDFTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="Disc_Scheduling.*" />
@@ -365,7 +378,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="Disc_Scheduling" />
       <option name="MAIN_CLASS_NAME" value="Disc_Scheduling.DiscSchedulingAlgorithmTest" />
-      <option name="METHOD_NAME" value="FCFSTest" />
+      <option name="METHOD_NAME" value="EDFTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -391,31 +404,6 @@
       <option name="PACKAGE_NAME" value="Disc_Scheduling" />
       <option name="MAIN_CLASS_NAME" value="Disc_Scheduling.DiscSchedulingAlgorithmTest" />
       <option name="METHOD_NAME" value="SCANTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="DiscSchedulingAlgorithmTest.SSTFTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Disc_Scheduling.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="SO_2" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Disc_Scheduling" />
-      <option name="MAIN_CLASS_NAME" value="Disc_Scheduling.DiscSchedulingAlgorithmTest" />
-      <option name="METHOD_NAME" value="SSTFTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -489,19 +477,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest.FCFSTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest.SSTFTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest.SCANTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest.CSCANTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest.SCANTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest.CSCANTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.All in SO_2" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest.EDFTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest.CSCANTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest.SCANTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest.SSTFTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest.FCFSTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest.EDFTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.All in SO_2" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest.SCANTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DiscSchedulingAlgorithmTest.CSCANTest" />
       </list>
     </recent_temporary>
   </component>
@@ -520,59 +508,72 @@
       <updated>1521491438392</updated>
       <workItem from="1521491444512" duration="7202000" />
       <workItem from="1521637808498" duration="16707000" />
+      <workItem from="1521713029155" duration="6602000" />
+      <workItem from="1521793598151" duration="599000" />
+      <workItem from="1521816066150" duration="7816000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DiscSchedulingAlgorithmTest - 2018.03.21 at 19h 54m 33s.xml">
-      <configuration name="DiscSchedulingAlgorithmTest" configurationId="JUnit" />
+    <history-entry file="DiscSchedulingAlgorithmTest_EDFTest - 2018.03.23 at 17h 37m 48s.xml">
+      <configuration name="DiscSchedulingAlgorithmTest.EDFTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DiscSchedulingAlgorithmTest_CSCANTest - 2018.03.21 at 19h 53m 58s.xml">
-      <configuration name="DiscSchedulingAlgorithmTest.CSCANTest" configurationId="JUnit" />
+    <history-entry file="DiscSchedulingAlgorithmTest_EDFTest - 2018.03.23 at 17h 39m 50s.xml">
+      <configuration name="DiscSchedulingAlgorithmTest.EDFTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DiscSchedulingAlgorithmTest_FCFSTest - 2018.03.21 at 19h 27m 10s.xml">
-      <configuration name="DiscSchedulingAlgorithmTest.FCFSTest" configurationId="JUnit" />
+    <history-entry file="DiscSchedulingAlgorithmTest_EDFTest - 2018.03.23 at 17h 42m 18s.xml">
+      <configuration name="DiscSchedulingAlgorithmTest.EDFTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DiscSchedulingAlgorithmTest_SCANTest - 2018.03.21 at 19h 41m 41s.xml">
+    <history-entry file="DiscSchedulingAlgorithmTest_EDFTest - 2018.03.23 at 17h 43m 07s.xml">
+      <configuration name="DiscSchedulingAlgorithmTest.EDFTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DiscSchedulingAlgorithmTest_EDFTest - 2018.03.23 at 17h 47m 48s.xml">
+      <configuration name="DiscSchedulingAlgorithmTest.EDFTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DiscSchedulingAlgorithmTest_SCANTest - 2018.03.22 at 12h 17m 16s.xml">
       <configuration name="DiscSchedulingAlgorithmTest.SCANTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DiscSchedulingAlgorithmTest_SCANTest - 2018.03.21 at 19h 43m 01s.xml">
+    <history-entry file="DiscSchedulingAlgorithmTest_SCANTest - 2018.03.22 at 12h 19m 26s.xml">
       <configuration name="DiscSchedulingAlgorithmTest.SCANTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DiscSchedulingAlgorithmTest_SCANTest - 2018.03.21 at 19h 44m 50s.xml">
+    <history-entry file="DiscSchedulingAlgorithmTest_SCANTest - 2018.03.22 at 12h 20m 06s.xml">
       <configuration name="DiscSchedulingAlgorithmTest.SCANTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DiscSchedulingAlgorithmTest_SSTFTest - 2018.03.21 at 19h 33m 52s.xml">
-      <configuration name="DiscSchedulingAlgorithmTest.SSTFTest" configurationId="JUnit" />
+    <history-entry file="DiscSchedulingAlgorithmTest_SCANTest - 2018.03.22 at 12h 21m 26s.xml">
+      <configuration name="DiscSchedulingAlgorithmTest.SCANTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DiscSchedulingAlgorithmTest_SCANTest - 2018.03.22 at 12h 21m 55s.xml">
+      <configuration name="DiscSchedulingAlgorithmTest.SCANTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23909000" />
+    <option name="totallyTimeSpent" value="38926000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="0" width="1439" height="1309" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18578465" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -580,6 +581,35 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -589,11 +619,367 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Disc_Scheduling/SCAN.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Disc_Access/DiscAccessRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+          <folding>
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#1086#1087#0" expanded="true" />
+            <element signature="e#1123#1124#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
+            <element signature="e#1232#1233#0" expanded="true" />
+            <element signature="e#1269#1270#0" expanded="true" />
+            <element signature="e#1305#1306#0" expanded="true" />
+            <element signature="e#1360#1361#0" expanded="true" />
+            <element signature="e#1410#1411#0" expanded="true" />
+            <element signature="e#1451#1452#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="e#1554#1555#0" expanded="true" />
+            <element signature="e#1612#1613#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/Direction/Direction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/DiscSchedulingAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="70" column="12" lean-forward="false" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#2620#2621#0" expanded="true" />
+            <element signature="e#2669#2670#0" expanded="true" />
+            <element signature="e#2899#2900#0" expanded="true" />
+            <element signature="e#2940#2941#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/EDF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#243#274#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/FDSCAN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/FCFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="17" column="90" lean-forward="false" selection-start-line="17" selection-start-column="90" selection-end-line="17" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/SSTF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="90" lean-forward="false" selection-start-line="15" selection-start-column="90" selection-end-line="15" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/SCAN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1692">
+          <caret line="94" column="44" lean-forward="false" selection-start-line="94" selection-start-column="44" selection-end-line="94" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/CSCAN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1152">
+          <caret line="68" column="43" lean-forward="false" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/Disc_Scheduling/DiscSchedulingAlgorithmTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1062">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Access/DiscAccessRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+          <folding>
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#1086#1087#0" expanded="true" />
+            <element signature="e#1123#1124#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
+            <element signature="e#1232#1233#0" expanded="true" />
+            <element signature="e#1269#1270#0" expanded="true" />
+            <element signature="e#1305#1306#0" expanded="true" />
+            <element signature="e#1360#1361#0" expanded="true" />
+            <element signature="e#1410#1411#0" expanded="true" />
+            <element signature="e#1451#1452#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="e#1554#1555#0" expanded="true" />
+            <element signature="e#1612#1613#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/Direction/Direction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/DiscSchedulingAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="70" column="12" lean-forward="false" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#2620#2621#0" expanded="true" />
+            <element signature="e#2669#2670#0" expanded="true" />
+            <element signature="e#2899#2900#0" expanded="true" />
+            <element signature="e#2940#2941#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/FDSCAN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/EDF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#243#274#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/FCFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="90" lean-forward="false" selection-start-line="17" selection-start-column="90" selection-end-line="17" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/SSTF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="90" lean-forward="false" selection-start-line="15" selection-start-column="90" selection-end-line="15" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/SCAN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1692">
+          <caret line="94" column="44" lean-forward="false" selection-start-line="94" selection-start-column="44" selection-end-line="94" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/CSCAN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1152">
+          <caret line="68" column="43" lean-forward="false" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/Disc_Scheduling/DiscSchedulingAlgorithmTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1206">
+          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Access/DiscAccessRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#1086#1087#0" expanded="true" />
+            <element signature="e#1123#1124#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
+            <element signature="e#1232#1233#0" expanded="true" />
+            <element signature="e#1269#1270#0" expanded="true" />
+            <element signature="e#1305#1306#0" expanded="true" />
+            <element signature="e#1360#1361#0" expanded="true" />
+            <element signature="e#1410#1411#0" expanded="true" />
+            <element signature="e#1451#1452#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="e#1554#1555#0" expanded="true" />
+            <element signature="e#1612#1613#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/Direction/Direction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/DiscSchedulingAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="903">
+          <caret line="43" column="12" lean-forward="false" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#2620#2621#0" expanded="true" />
+            <element signature="e#2669#2670#0" expanded="true" />
+            <element signature="e#2899#2900#0" expanded="true" />
+            <element signature="e#2940#2941#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/FDSCAN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/EDF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#243#274#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/FCFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="90" lean-forward="false" selection-start-line="17" selection-start-column="90" selection-end-line="17" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/SSTF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="15" column="90" lean-forward="false" selection-start-line="15" selection-start-column="90" selection-end-line="15" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/SCAN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="85" column="47" lean-forward="false" selection-start-line="85" selection-start-column="47" selection-end-line="85" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/CSCAN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1344">
+          <caret line="68" column="43" lean-forward="false" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/Disc_Scheduling/DiscSchedulingAlgorithmTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Disc_Access/DiscAccessRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="609">
@@ -601,18 +987,18 @@
           <folding>
             <element signature="e#653#654#0" expanded="true" />
             <element signature="e#690#691#0" expanded="true" />
-            <element signature="e#901#902#0" expanded="true" />
-            <element signature="e#938#939#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1047#1048#0" expanded="true" />
-            <element signature="e#1084#1085#0" expanded="true" />
-            <element signature="e#1120#1121#0" expanded="true" />
-            <element signature="e#1175#1176#0" expanded="true" />
-            <element signature="e#1225#1226#0" expanded="true" />
-            <element signature="e#1266#1267#0" expanded="true" />
-            <element signature="e#1306#1307#0" expanded="true" />
-            <element signature="e#1369#1370#0" expanded="true" />
-            <element signature="e#1427#1428#0" expanded="true" />
+            <element signature="e#1086#1087#0" expanded="true" />
+            <element signature="e#1123#1124#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
+            <element signature="e#1232#1233#0" expanded="true" />
+            <element signature="e#1269#1270#0" expanded="true" />
+            <element signature="e#1305#1306#0" expanded="true" />
+            <element signature="e#1360#1361#0" expanded="true" />
+            <element signature="e#1410#1411#0" expanded="true" />
+            <element signature="e#1451#1452#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="e#1554#1555#0" expanded="true" />
+            <element signature="e#1612#1613#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -623,12 +1009,12 @@
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#583#584#0" expanded="true" />
-            <element signature="e#629#630#0" expanded="true" />
-            <element signature="e#2584#2585#0" expanded="true" />
-            <element signature="e#2633#2634#0" expanded="true" />
-            <element signature="e#2676#2677#0" expanded="true" />
-            <element signature="e#2717#2718#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#2620#2621#0" expanded="true" />
+            <element signature="e#2669#2670#0" expanded="true" />
+            <element signature="e#2899#2900#0" expanded="true" />
+            <element signature="e#2940#2941#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -637,7 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -655,75 +1040,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/Direction/Direction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="90">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Disc_Access/DiscAccessRequest.java">
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/FDSCAN.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="144">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#653#654#0" expanded="true" />
-            <element signature="e#690#691#0" expanded="true" />
-            <element signature="e#901#902#0" expanded="true" />
-            <element signature="e#938#939#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1047#1048#0" expanded="true" />
-            <element signature="e#1084#1085#0" expanded="true" />
-            <element signature="e#1120#1121#0" expanded="true" />
-            <element signature="e#1175#1176#0" expanded="true" />
-            <element signature="e#1225#1226#0" expanded="true" />
-            <element signature="e#1266#1267#0" expanded="true" />
-            <element signature="e#1306#1307#0" expanded="true" />
-            <element signature="e#1369#1370#0" expanded="true" />
-            <element signature="e#1427#1428#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/CSCAN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/SSTF.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="15" column="90" lean-forward="false" selection-start-line="15" selection-start-column="90" selection-end-line="15" selection-end-column="90" />
+        <state relative-caret-position="361">
+          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/FCFS.java">
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/SCAN.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-257">
-          <caret line="17" column="90" lean-forward="false" selection-start-line="17" selection-start-column="90" selection-end-line="17" selection-end-column="90" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/EDF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/FDSCAN.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="379">
+          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="30" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -732,53 +1093,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/DiscSchedulingAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="43" column="12" lean-forward="false" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+        <state relative-caret-position="721">
+          <caret line="93" column="35" lean-forward="false" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#583#584#0" expanded="true" />
-            <element signature="e#629#630#0" expanded="true" />
-            <element signature="e#2584#2585#0" expanded="true" />
-            <element signature="e#2633#2634#0" expanded="true" />
-            <element signature="e#2676#2677#0" expanded="true" />
-            <element signature="e#2717#2718#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#2620#2621#0" expanded="true" />
+            <element signature="e#2669#2670#0" expanded="true" />
+            <element signature="e#2899#2900#0" expanded="true" />
+            <element signature="e#2940#2941#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/SCAN.java">
+    <entry file="file://$PROJECT_DIR$/src/Disc_Access/DiscAccessRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="85" column="47" lean-forward="false" selection-start-line="85" selection-start-column="47" selection-end-line="85" selection-end-column="47" />
+        <state relative-caret-position="325">
+          <caret line="32" column="79" lean-forward="false" selection-start-line="32" selection-start-column="79" selection-end-line="32" selection-end-column="79" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#544#575#0" expanded="true" />
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#1086#1087#0" expanded="true" />
+            <element signature="e#1123#1124#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
+            <element signature="e#1232#1233#0" expanded="true" />
+            <element signature="e#1269#1270#0" expanded="true" />
+            <element signature="e#1305#1306#0" expanded="true" />
+            <element signature="e#1360#1361#0" expanded="true" />
+            <element signature="e#1410#1411#0" expanded="true" />
+            <element signature="e#1451#1452#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="e#1554#1555#0" expanded="true" />
+            <element signature="e#1612#1613#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/CSCAN.java">
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/FCFS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="68" column="43" lean-forward="false" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+        <state relative-caret-position="559">
+          <caret line="77" column="77" lean-forward="true" selection-start-line="59" selection-start-column="16" selection-end-line="77" selection-end-column="77" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#502#533#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/Disc_Scheduling/DiscSchedulingAlgorithmTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="183">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Disc_Scheduling/EDF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="66" column="57" lean-forward="false" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="57" />
           <folding>
-            <element signature="e#432#433#0" expanded="true" />
-            <element signature="e#513#514#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
-            <element signature="e#626#627#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#243#274#0" expanded="true" />
           </folding>
         </state>
       </provider>

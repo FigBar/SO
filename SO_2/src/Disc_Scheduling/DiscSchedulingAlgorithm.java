@@ -9,11 +9,13 @@ import java.util.ArrayList;
 public abstract class DiscSchedulingAlgorithm {
 
     static final int MAX_ADDRESS = 1000;
-    static final int HEAD_MOVE_TIME = 2;
+    static final int HEAD_MOVE_TIME = 1;
 
     private long sumOfHeadMovements = 0;
 
     static int currentHeadPosition = (int) (Math.random() * MAX_ADDRESS) + 1;
+
+    int executedAfterDeadline = 0;
 
     int clock = 0;
     int prevClock = -1;
@@ -76,7 +78,19 @@ public abstract class DiscSchedulingAlgorithm {
         return (q == null || q.isEmpty());
     }
 
+    void notExecutedBeforeDeadline(DiscAccessRequest req1){
+        if(req1.getExecutionDeadline() > 0 && req1.getExecutionDeadline() > clock)
+            executedAfterDeadline++;
+    }
+
     public long getSumOfHeadMovements() {
         return sumOfHeadMovements;
     }
+     void reset(){
+         sumOfHeadMovements = 0;
+         clock = 0;
+         prevClock = -1;
+         currentDirection = Direction.RIGHT;
+         executedAfterDeadline = 0;
+     }
 }

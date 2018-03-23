@@ -20,6 +20,8 @@ public class SCAN extends DiscSchedulingAlgorithm {
     @SuppressWarnings("Duplicates")
     public long carryOutSimulation(ArrayList<DiscAccessRequest> requestsQueue) throws ImpossibleToSimulateException {
 
+        reset();
+
         //checking whether it is possible to carry out simulation with provided data
         if (isDataInvalid(requestsQueue)) {
             throw new ImpossibleToSimulateException();
@@ -81,9 +83,9 @@ public class SCAN extends DiscSchedulingAlgorithm {
                     } else { //the head moves left
                         currentDirection = Direction.RIGHT;
                         prevClock = clock;
-                        clock += currentHeadPosition * HEAD_MOVE_TIME;
-                        super.addToSumOfHeadMovements(currentHeadPosition);
-                        currentHeadPosition = 0;
+                        clock += (currentHeadPosition - 1) * HEAD_MOVE_TIME;
+                        super.addToSumOfHeadMovements(currentHeadPosition - 1);
+                        currentHeadPosition = 1;
 
                     }
                     //the directional queue isn't empty
@@ -101,6 +103,9 @@ public class SCAN extends DiscSchedulingAlgorithm {
                         prevClock = clock;
                         //end of cycle
                         clock += calcHeadMovement(currentRequest) * HEAD_MOVE_TIME;
+
+                        // check for requests with deadlines
+                        notExecutedBeforeDeadline(currentRequest);
 
                         //setting new position of head
                         currentHeadPosition = currentRequest.getInitialAddress();

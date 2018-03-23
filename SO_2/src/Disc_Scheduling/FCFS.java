@@ -21,6 +21,8 @@ public class FCFS extends DiscSchedulingAlgorithm {
     @Override
     public long carryOutSimulation(ArrayList<DiscAccessRequest> requestsQueue) throws ImpossibleToSimulateException {
 
+        reset();
+
 
         //checking whether it is possible to carry out simulation with provided data
         if (isDataInvalid(requestsQueue)) {
@@ -68,6 +70,9 @@ public class FCFS extends DiscSchedulingAlgorithm {
 
                     //setting end of cycle time;
                     clock += calcHeadMovement(currentRequest) * HEAD_MOVE_TIME;
+
+                    // check for requests with deadlines
+                    notExecutedBeforeDeadline(currentRequest);
 
                     //setting the head's position on current request's initial address
                     currentHeadPosition = currentRequest.getInitialAddress();

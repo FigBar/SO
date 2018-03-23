@@ -47,8 +47,9 @@ class DiscSchedulingAlgorithmTest {
 
         //test with arrival times
         SCAN scan2 = new SCAN();
-        scan2.currentDirection = Direction.RIGHT;
+
         DiscSchedulingAlgorithm.currentHeadPosition = 53;
+        scan2.currentDirection = Direction.RIGHT;
         //0 -> 11 -> 96 -> 736 -> 963 -> 1823 -> 1842 -> 1849 -> 1891 -> 1892 -> 1935 -> 1943
         assertEquals(1943, scan2.carryOutSimulation(createArrivingTestOrders()));
     }
@@ -64,8 +65,23 @@ class DiscSchedulingAlgorithmTest {
     }
 
     @Test
-    void FDSCAN(){
+    void FDSCANTest(){
 
+        DiscSchedulingAlgorithm.currentHeadPosition = 53;
+
+        assertEquals(2448, (new FDSCAN()).carryOutSimulation(createPriorityTestRequests()));
+
+        //TODO test 1 priority requests not executed in time
+
+    }
+
+    @Test
+    void EDFTest(){
+        DiscSchedulingAlgorithm.currentHeadPosition = 53;
+
+        assertEquals(2990, (new EDF()).carryOutSimulation(createPriorityTestRequests()));
+
+        //TODO test 2 priority requests not executed in time
     }
 
     private ArrayList<DiscAccessRequest> createQueue(){
@@ -106,6 +122,7 @@ class DiscSchedulingAlgorithmTest {
         requestsQueue.add(new DiscAccessRequest(69,0,10));
         requestsQueue.add(new DiscAccessRequest(54,0,30));
         requestsQueue.add(new DiscAccessRequest(564,23,1000));
+        requestsQueue.add(new DiscAccessRequest(614,25,900));
         requestsQueue.add(new DiscAccessRequest(314,1050));
         requestsQueue.add(new DiscAccessRequest(505,1100));
         requestsQueue.add(new DiscAccessRequest(813,1200, 2000));

@@ -19,6 +19,8 @@ public class CSCAN extends DiscSchedulingAlgorithm {
     @SuppressWarnings("Duplicates")
     public long carryOutSimulation(ArrayList<DiscAccessRequest> requestsQueue) throws ImpossibleToSimulateException {
 
+        reset();
+
         //checking whether it is possible to carry out simulation with provided data
         if (isDataInvalid(requestsQueue)) {
             throw new ImpossibleToSimulateException();
@@ -66,7 +68,7 @@ public class CSCAN extends DiscSchedulingAlgorithm {
                     prevClock = clock;
                     clock += ((MAX_ADDRESS - currentHeadPosition) + 1) * HEAD_MOVE_TIME;
                     super.addToSumOfHeadMovements((MAX_ADDRESS - currentHeadPosition) + 1);
-                    currentHeadPosition = 0;
+                    currentHeadPosition = 1;
                 } else { //there are requests ahead of disc head
 
                     //finding the nearest request in directional queue
@@ -82,6 +84,9 @@ public class CSCAN extends DiscSchedulingAlgorithm {
                         prevClock = clock;
                         //end of cycle
                         clock += calcHeadMovement(currentRequest) * HEAD_MOVE_TIME;
+
+                        // check for requests with deadlines
+                        notExecutedBeforeDeadline(currentRequest);
 
                         //setting new position of disc head
                         currentHeadPosition = currentRequest.getInitialAddress();

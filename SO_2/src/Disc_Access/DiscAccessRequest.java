@@ -29,6 +29,10 @@ public class DiscAccessRequest {
         return Integer.compare(req1.timeOfArrival, req2.timeOfArrival);
     }
 
+    public static int compareByExecutionDeadline(DiscAccessRequest req1, DiscAccessRequest req2){
+        return Integer.compare(req1.executionDeadline, req2.executionDeadline);
+    }
+
     public int getInitialAddress() {
         return initialAddress;
     }

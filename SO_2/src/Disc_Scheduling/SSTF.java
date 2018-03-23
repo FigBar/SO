@@ -18,6 +18,9 @@ public class SSTF extends DiscSchedulingAlgorithm {
     @SuppressWarnings("Duplicates")
     @Override
     public long carryOutSimulation(ArrayList<DiscAccessRequest> requestsQueue) throws ImpossibleToSimulateException {
+
+        reset();
+
         //checking whether it is possible to carry out simulation with provided data
         if (isDataInvalid(requestsQueue)) {
             throw new ImpossibleToSimulateException();
@@ -64,6 +67,9 @@ public class SSTF extends DiscSchedulingAlgorithm {
 
                     //setting end of cycle time;
                     clock += calcHeadMovement(currentRequest) * HEAD_MOVE_TIME;
+
+                    // check for requests with deadlines
+                    notExecutedBeforeDeadline(currentRequest);
 
                     //setting the head's position on current request's initial address
                     currentHeadPosition = currentRequest.getInitialAddress();
