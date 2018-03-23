@@ -22,8 +22,13 @@ public class EDF extends DiscSchedulingAlgorithm {
         //sorting requests by time of arrival
         Collections.sort(requestsQueue, DiscAccessRequest::compareByTimeOfArrival);
 
+        //regular request queue with arrival time considered
         ArrayList<DiscAccessRequest> availableRequests = new ArrayList<>();
+
+        //only priority request queue
         ArrayList<DiscAccessRequest> priorityRequests = new ArrayList<>();
+
+        //priority request queue with arrival time considered
         ArrayList<DiscAccessRequest> availablePriority = new ArrayList<>();
 
         if (!requestsQueue.isEmpty()) {
@@ -112,10 +117,12 @@ public class EDF extends DiscSchedulingAlgorithm {
                     //setting the head's position on current request's initial address
                     currentHeadPosition = currentRequest.getInitialAddress();
 
+                    //removing for regular requests
                     availableRequests.remove(currentRequest);
                     requestsQueue.remove(currentRequest);
 
-                    if(currentRequest.getExecutionDeadline()>0){
+                    //special removing for priority requests
+                    if (currentRequest.getExecutionDeadline() > 0) {
                         priorityRequests.remove(currentRequest);
                         availablePriority.remove(currentRequest);
                     }
