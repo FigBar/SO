@@ -46,86 +46,104 @@ public class FDSCAN extends DiscSchedulingAlgorithm {
             requestsQueue.forEach(request -> {
                 if (wasThereAnAccessRequestInLastCycle(request, prevClock, clock)) {
                     if (request.getExecutionDeadline() == -1) {
-                        availableRequests.add(request);
-                        if (currentDirection == Direction.RIGHT && currentHeadPosition < request.getInitialAddress()) {
-                            correctDirectionRequests.add(request);
-                        } else if (currentDirection == Direction.LEFT && currentHeadPosition > request.getInitialAddress()){
-                            correctDirectionRequests.add(request);
+                        if (!availableRequests.contains(request)) {
+                            availableRequests.add(request);
                         }
                     } else {
-                        availablePriority.add(request);
-                        if(currentDirection == Direction.RIGHT && currentHeadPosition < request.getInitialAddress()){
-                            correctDirectionPriority.add(request);
-                        } else if(currentDirection == Direction.LEFT && currentHeadPosition > request.getInitialAddress()){
-                            correctDirectionPriority.add(request);
+                        if (!availablePriority.contains(request)) {
+                            availablePriority.add(request);
+                        }
+                        if (!correctDirectionPriority.contains(request)) {
+                            if(currentDirection == Direction.RIGHT && currentHeadPosition <= request.getInitialAddress()){
+                                correctDirectionPriority.add(request);
+                            } else if(currentDirection == Direction.LEFT && request.getInitialAddress() <= currentHeadPosition){
+                                correctDirectionPriority.add(request);
+                            }
                         }
                     }
                 }
             });
 
-            if(!correctDirectionPriority.isEmpty()){
-                currentRequest = findNearestRequests(correctDirectionPriority,currentHeadPosition);
-            } else if(!availablePriority.isEmpty()){
-                if(currentDirection == Direction.RIGHT){
+            availableRequests.forEach(request -> {
+                if(currentDirection == Direction.RIGHT && currentHeadPosition < request.getInitialAddress()){
+                    correctDirectionRequests.add(request);
+                } else if (currentDirection == Direction.LEFT && request.getInitialAddress() < currentHeadPosition){
+                    correctDirectionRequests.add(request);
+                }
+            });
+
+            if (!correctDirectionPriority.isEmpty()) {
+                currentRequest = findNearestRequests(correctDirectionPriority, currentHeadPosition);
+            } else if (!availablePriority.isEmpty()) {
+                if (currentDirection == Direction.RIGHT) {
                     currentDirection = Direction.LEFT;
-                }else{
+                } else {
                     currentDirection = Direction.RIGHT;
                 }
-                break;
-            } else if(!correctDirectionRequests.isEmpty()){
-                currentRequest = findNearestRequests(correctDirectionRequests,currentHeadPosition);
-            } else if(!availableRequests.isEmpty()){
-                if(currentDirection == Direction.RIGHT){
+                continue;
+            } else if (!correctDirectionRequests.isEmpty()) {
+                currentRequest = findNearestRequests(correctDirectionRequests, currentHeadPosition);
+            } else if (!availableRequests.isEmpty()) {
+                if (currentDirection == Direction.RIGHT) {
                     prevClock = clock;
                     clock += (MAX_ADDRESS - currentHeadPosition) * HEAD_MOVE_TIME;
                     super.addToSumOfHeadMovements(MAX_ADDRESS - currentHeadPosition);
                     currentHeadPosition = MAX_ADDRESS;
                     currentDirection = Direction.LEFT;
-                } else if(currentDirection == Direction.LEFT){
+                } else if (currentDirection == Direction.LEFT) {
                     prevClock = clock;
-                    clock+= (currentHeadPosition - 1)* HEAD_MOVE_TIME;
+                    clock += (currentHeadPosition - 1) * HEAD_MOVE_TIME;
                     super.addToSumOfHeadMovements(currentHeadPosition - 1);
                     currentHeadPosition = 1;
                     currentDirection = Direction.RIGHT;
                 }
-                break;
+                continue;
             } else {
                 clock = requestsQueue.get(0).getTimeOfArrival();
-                break;
+                continue;
             }
-            //checking if the request is addressable
-            if (isTheAccessRequestValid(currentRequest)) {
 
-                //calculating the movement of disk head
-                //which is | request initial address - current head position |
-                //then adding it to the sum of head movements
-                super.addToSumOfHeadMovements(calcHeadMovement(currentRequest));
+            int requestComing = willRequestComeWithinThisCycle(currentRequest);
 
-                //setting start of cycle time;
-                prevClock = clock;
+            if (requestComing != -1){
+                moveTo(requestComing,currentRequest);
+            } else {
+                //checking if the request is addressable
+                if (isTheAccessRequestValid(currentRequest)) {
 
-                //setting end of cycle time;
-                clock += calcHeadMovement(currentRequest) * HEAD_MOVE_TIME;
+                    //calculating the movement of disk head
+                    //which is | request initial address - current head position |
+                    //then adding it to the sum of head movements
+                    super.addToSumOfHeadMovements(calcHeadMovement(currentRequest));
 
-                // check for requests with deadlines
-                notExecutedBeforeDeadline(currentRequest);
+                    //setting start of cycle time;
+                    prevClock = clock;
 
-                //setting the head's position on current request's initial address
-                currentHeadPosition = currentRequest.getInitialAddress();
+                    //setting end of cycle time;
+                    clock += calcHeadMovement(currentRequest) * HEAD_MOVE_TIME;
 
-                requestsQueue.remove(currentRequest);
+                    // check for requests with deadlines
+                    notExecutedBeforeDeadline(currentRequest);
 
-                if(currentRequest.getExecutionDeadline() == -1){
-                    availableRequests.remove(currentRequest);
-                    correctDirectionRequests.remove(currentRequest);
-                } else {
-                    availablePriority.remove(currentRequest);
-                    correctDirectionPriority.remove(currentRequest);
+                    //setting the head's position on current request's initial address
+                    currentHeadPosition = currentRequest.getInitialAddress();
+
+                    requestsQueue.remove(currentRequest);
+
+                    if (currentRequest.getExecutionDeadline() == -1) {
+                        availableRequests.remove(currentRequest);
+                        correctDirectionRequests.remove(currentRequest);
+                    } else {
+                        priorityRequests.remove(currentRequest);
+                        availablePriority.remove(currentRequest);
+                        correctDirectionPriority.remove(currentRequest);
+                    }
                 }
             }
         }
         return super.getSumOfHeadMovements();
     }
+
     private int calcHeadMovement(DiscAccessRequest req1) {
         int movement = req1.getInitialAddress() - currentHeadPosition;
 
