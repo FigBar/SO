@@ -13,6 +13,7 @@ public class FDSCAN extends DiscSchedulingAlgorithm {
         super(queue);
     }
 
+    @SuppressWarnings("Duplicates")
     @Override
     public long carryOutSimulation() throws ImpossibleToSimulateException {
 
@@ -60,22 +61,27 @@ public class FDSCAN extends DiscSchedulingAlgorithm {
                         if (!availablePriority.contains(request)) {
                             availablePriority.add(request);
                         }
-                        if (!correctDirectionPriority.contains(request)) {
-                            if (currentDirection == Direction.RIGHT && currentHeadPosition <= request.getInitialAddress()) {
-                                correctDirectionPriority.add(request);
-                            } else if (currentDirection == Direction.LEFT && request.getInitialAddress() <= currentHeadPosition) {
-                                correctDirectionPriority.add(request);
-                            }
-                        }
+                    }
+                }
+            });
+
+            availablePriority.forEach(request -> {
+                if (!correctDirectionPriority.contains(request)) {
+                    if (currentDirection == Direction.RIGHT && currentHeadPosition <= request.getInitialAddress()) {
+                        correctDirectionPriority.add(request);
+                    } else if (currentDirection == Direction.LEFT && request.getInitialAddress() <= currentHeadPosition) {
+                        correctDirectionPriority.add(request);
                     }
                 }
             });
 
             availableRequests.forEach(request -> {
-                if (currentDirection == Direction.RIGHT && currentHeadPosition <= request.getInitialAddress()) {
-                    correctDirectionRequests.add(request);
-                } else if (currentDirection == Direction.LEFT && request.getInitialAddress() <= currentHeadPosition) {
-                    correctDirectionRequests.add(request);
+                if (!correctDirectionRequests.contains(request)) {
+                    if (currentDirection == Direction.RIGHT && currentHeadPosition <= request.getInitialAddress()) {
+                        correctDirectionRequests.add(request);
+                    } else if (currentDirection == Direction.LEFT && request.getInitialAddress() <= currentHeadPosition) {
+                        correctDirectionRequests.add(request);
+                    }
                 }
             });
 
@@ -147,6 +153,7 @@ public class FDSCAN extends DiscSchedulingAlgorithm {
                     }
                 }
                 correctDirectionRequests.clear();
+                correctDirectionPriority.clear();
             }
         }
         return super.getSumOfHeadMovements();

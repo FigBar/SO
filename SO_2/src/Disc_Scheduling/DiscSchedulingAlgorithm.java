@@ -14,7 +14,7 @@ public abstract class DiscSchedulingAlgorithm {
 
     private long sumOfHeadMovements = 0;
 
-    static int currentHeadPosition = (int) (Math.random() * MAX_ADDRESS) + 1;
+    static int currentHeadPosition = 53;
 
     public ArrayList<DiscAccessRequest> getRequestsQueue() {
         return requestsQueue;

@@ -50,15 +50,17 @@ public class EDF extends DiscSchedulingAlgorithm {
         while (!requestsQueue.isEmpty()) {
 
             requestsQueue.forEach(request -> {
-                if (request.getExecutionDeadline() == -1 && wasThereAnAccessRequestInLastCycle(request, prevClock, clock))
+                if (request.getExecutionDeadline() == -1 && wasThereAnAccessRequestInLastCycle(request, prevClock, clock)) {
                     availableRequests.add(request);
+                }
             });
 
             Collections.sort(priorityRequests, DiscAccessRequest::compareByExecutionDeadline);
 
             priorityRequests.forEach(request -> {
-                if (wasThereAnAccessRequestInLastCycle(request, prevClock, clock))
+                if (wasThereAnAccessRequestInLastCycle(request, prevClock, clock)) {
                     availablePriority.add(request);
+                }
 
             });
 
@@ -70,7 +72,7 @@ public class EDF extends DiscSchedulingAlgorithm {
                 currentRequest = availableRequests.get(0);
             } else {
                 clock += requestsQueue.get(0).getTimeOfArrival();
-                break;
+                continue;
             }
 
             DiscAccessRequest smallerDeadlineComing = null;

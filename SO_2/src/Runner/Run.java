@@ -17,11 +17,22 @@ public class Run {
     private static int maxDeadline;
 
     private static float FCFSSimulationSum;
+    private static float FCFSDeadlinesSum;
+
     private static float SSTFSimulationSum;
+    private static float SSTFDeadlinesSum;
+
     private static float SCANSimulationSum;
+    private static float SCANDeadlinesSum;
+
     private static float CSCANSimulationSum;
+    private static float CSCANDeadlinesSum;
+
     private static float EDFSimulationSum;
+    private static float EDFDeadlinesSum;
+
     private static float FDSCANSimulationSum;
+    private static float FDSCANDeadlinesSum;
 
 
     public static void main(String[] args) {
@@ -31,6 +42,11 @@ public class Run {
         int accuracy = getNumberBetween(1, 100);
 
         createData();
+
+        System.out.println("\n" + "Number of requests in simulation: " + requestsAmount);
+        System.out.println("\n" + "Number of real-time requests in simulation: " + deadlinesAmount);
+        System.out.println("\n" + "Maximum arrival time of request: " + maxArrivalTime);
+
 
         for (int i = 0; i < accuracy; i++) {
 
@@ -46,12 +62,11 @@ public class Run {
             algorithms.add(new FDSCAN(new ArrayList<>(requestsQueue)));
 
 
-            System.out.println("\n" + "Simulation " + i);
+            System.out.println("\n" + "--Simulation-- " + i);
 
             int identifierOfAlgorithm = 0;
 
             for (DiscSchedulingAlgorithm algorithm : algorithms) {
-
 
 
                 algorithm.carryOutSimulation();
@@ -60,31 +75,37 @@ public class Run {
                         algorithm.getClass().getSimpleName() +
                                 ", sum of disc head movements: " +
                                 algorithm.getSumOfHeadMovements() +
-                                " Requests executed after deadline: " +
+                                " ||| Requests executed after deadline: " +
                                 algorithm.getExecutedAfterDeadline()
                 );
 
                 switch (identifierOfAlgorithm) {
                     case 0:
                         FCFSSimulationSum += algorithm.getSumOfHeadMovements();
+                        FCFSDeadlinesSum += algorithm.getExecutedAfterDeadline();
                         break;
                     case 1:
                         SSTFSimulationSum += algorithm.getSumOfHeadMovements();
+                        SSTFDeadlinesSum += algorithm.getExecutedAfterDeadline();
                         break;
                     case 2:
                         SCANSimulationSum += algorithm.getSumOfHeadMovements();
+                        SCANDeadlinesSum += algorithm.getExecutedAfterDeadline();
                         break;
                     case 3:
                         CSCANSimulationSum += algorithm.getSumOfHeadMovements();
+                        CSCANDeadlinesSum += algorithm.getExecutedAfterDeadline();
                         break;
                     case 4:
                         EDFSimulationSum += algorithm.getSumOfHeadMovements();
+                        EDFDeadlinesSum += algorithm.getExecutedAfterDeadline();
                         break;
                     case 5:
                         FDSCANSimulationSum += algorithm.getSumOfHeadMovements();
+                        FDSCANDeadlinesSum += algorithm.getExecutedAfterDeadline();
                         break;
                     default:
-                            System.out.println("Something went wrong");
+                        System.out.println("Something went wrong");
                 }
                 identifierOfAlgorithm++;
                 System.out.println();
@@ -93,13 +114,13 @@ public class Run {
         sc.close();
 
         System.out.println("\n\n");
-        System.out.println("FCFS average sum of head movements in " + accuracy + " runs: " + String.format("%.3f", FCFSSimulationSum/accuracy));
-        System.out.println("SSTF average sum of head movements in " + accuracy + " runs: " + String.format("%.3f", SSTFSimulationSum/accuracy));
-        System.out.println("SCAN average sum of head movements in " + accuracy + " runs: " + String.format("%.3f", SCANSimulationSum/accuracy));
-        System.out.println("C-SCAN average sum of head movements in " + accuracy + " runs: " + String.format("%.3f", CSCANSimulationSum/accuracy));
+        System.out.println("FCFS average sum of head movements in " + accuracy + " runs: " + String.format("%.2f", FCFSSimulationSum / accuracy) + " ||| Requests executed after deadline: " + String.format("%.2f", FCFSDeadlinesSum / accuracy));
+        System.out.println("SSTF average sum of head movements in " + accuracy + " runs: " + String.format("%.2f", SSTFSimulationSum / accuracy) + " ||| Requests executed after deadline: " + String.format("%.2f", SSTFDeadlinesSum / accuracy));
+        System.out.println("SCAN average sum of head movements in " + accuracy + " runs: " + String.format("%.2f", SCANSimulationSum / accuracy) + " ||| Requests executed after deadline: " + String.format("%.2f", SCANDeadlinesSum / accuracy));
+        System.out.println("C-SCAN average sum of head movements in " + accuracy + " runs: " + String.format("%.2f", CSCANSimulationSum / accuracy) + " ||| Requests executed after deadline: " + String.format("%.2f", CSCANDeadlinesSum / accuracy));
 
-        System.out.println("EDF average sum of head movements in " + accuracy + " runs: " + String.format("%.3f", EDFSimulationSum/accuracy));
-        System.out.println("FDSCAN average sum of head movements in " + accuracy + " runs: " + String.format("%.3f", FDSCANSimulationSum/accuracy));
+        System.out.println("EDF average sum of head movements in " + accuracy + " runs: " + String.format("%.2f", EDFSimulationSum / accuracy) + " ||| Requests executed after deadline: " + String.format("%.2f", EDFDeadlinesSum / accuracy));
+        System.out.println("FDSCAN average sum of head movements in " + accuracy + " runs: " + String.format("%.2f", FDSCANSimulationSum / accuracy) + " ||| Requests executed after deadline: " + String.format("%.2f", FDSCANDeadlinesSum / accuracy));
 
     }
 
@@ -136,16 +157,16 @@ public class Run {
         System.out.println("Provide the number of disc access requests in the queue: ");
         requestsAmount = getNumberBetween(1, 1000);
 
-        System.out.println("How many requests of all should have deadlines: ");
+        System.out.println("\n" + "How many requests of all should have deadlines: ");
         deadlinesAmount = getNumberBetween(1, (requestsAmount / 2));
 
-        System.out.println("Provide how late can a process arrive: ");
+        System.out.println("\n" + "Provide how late can a process arrive: ");
         maxArrivalTime = getNumberBetween(100, 500 + (requestsAmount * 2));
 
-        System.out.println("Provide maximum deadline of real-time request: ");
+        System.out.println("\n" + "Provide maximum deadline of real-time request: ");
         maxDeadline = getNumberBetween(100, 10000);
 
-        System.out.println("Provide minimum deadline of real-time request: ");
+        System.out.println("\n" + "Provide minimum deadline of real-time request: ");
         minDeadline = getNumberBetween(1, 99);
 
 

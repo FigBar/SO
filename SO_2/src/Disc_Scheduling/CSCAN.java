@@ -51,6 +51,7 @@ public class CSCAN extends DiscSchedulingAlgorithm {
             //them to available queue if yes
             requestsQueue.forEach(request -> {
                 if (wasThereAnAccessRequestInLastCycle(request, prevClock, clock)) {
+                    if(!availableRequests.contains(request))
                     availableRequests.add(request);
                 }
             });
@@ -65,7 +66,7 @@ public class CSCAN extends DiscSchedulingAlgorithm {
                 //ahead on the right of disc head
                 //and adding them to directional queue
                 availableRequests.forEach(request -> {
-                    if (request.getInitialAddress() > currentHeadPosition) {
+                    if (request.getInitialAddress() >= currentHeadPosition) {
                         if(!requestsInDirection.contains(request))
                         requestsInDirection.add(request);
                     }
