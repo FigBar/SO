@@ -8,18 +8,23 @@ import java.util.Collections;
 
 public class EDF extends DiscSchedulingAlgorithm {
 
+    public EDF(ArrayList<DiscAccessRequest> queue) {
+        super(queue);
+    }
+
     @Override
     @SuppressWarnings("Duplicates")
-    public long carryOutSimulation(ArrayList<DiscAccessRequest> requestsQueue) throws ImpossibleToSimulateException {
+    public long carryOutSimulation() throws ImpossibleToSimulateException {
 
         reset();
+
+        ArrayList<DiscAccessRequest> requestsQueue = super.getRequestsQueue();
 
         //checking whether it is possible to carry out simulation with provided data
         if (isDataInvalid(requestsQueue)) {
             throw new ImpossibleToSimulateException();
         }
 
-        this.requestsQueue = requestsQueue;
 
         //sorting requests by time of arrival
         Collections.sort(requestsQueue, DiscAccessRequest::compareByTimeOfArrival);

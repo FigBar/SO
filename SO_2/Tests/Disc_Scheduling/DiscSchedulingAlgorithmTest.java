@@ -20,60 +20,63 @@ class DiscSchedulingAlgorithmTest {
 
     @Test
     void FCFSTest() {
-        assertEquals(559, (new FCFS()).carryOutSimulation(createQueue()));
+        assertEquals(559, (new FCFS(createQueue())).carryOutSimulation());
         DiscSchedulingAlgorithm.currentHeadPosition = 53;
 
         //test with arrival times
         //0 -> 11 -> 63 -> 840 -> 1531 -> 1582 -> 1727 -> 1828 -> 1877 -> 1945 -> 2805 -> 3734
-        assertEquals(3734, (new FCFS()).carryOutSimulation(createArrivingTestOrders()));
+        assertEquals(3734, (new FCFS(createArrivingTestOrders())).carryOutSimulation());
     }
 
     @Test
     void SSTFTest() {
-        assertEquals(225, (new SSTF()).carryOutSimulation(createQueue()));
+        assertEquals(225, (new SSTF(createQueue())).carryOutSimulation());
 
         DiscSchedulingAlgorithm.currentHeadPosition = 53;
         //test with arrival times
         //0 -> 11 -> 63 -> 71 -> 165 -> 172 -> 216 -> 856 -> 1051 -> 1911 -> 1979 -> 1980
-        assertEquals(2248, (new SSTF()).carryOutSimulation(createArrivingTestOrders()));
+        assertEquals(2248, (new SSTF(createArrivingTestOrders())).carryOutSimulation());
 
         DiscSchedulingAlgorithm.currentHeadPosition = 53;
 
-        assertEquals(447, (new SSTF()).carryOutSimulation(sneakyRequests()));
+        assertEquals(447, (new SSTF(sneakyRequests())).carryOutSimulation());
     }
 
     @Test
     void SCANTest() {
-        SCAN scan1 = new SCAN();
+        SCAN scan1 = new SCAN(createQueue());
         scan1.currentDirection = Direction.LEFT;
 
-        //TODO calculate for algorithm beginning in RIGHT;
-        assertEquals(1973, scan1.carryOutSimulation(createQueue()));
+
+        assertEquals(1973, scan1.carryOutSimulation());
 
 
         //test with arrival times
-        SCAN scan2 = new SCAN();
+        SCAN scan2 = new SCAN(createArrivingTestOrders());
 
         DiscSchedulingAlgorithm.currentHeadPosition = 53;
         scan2.currentDirection = Direction.RIGHT;
         //0 -> 11 -> 96 -> 736 -> 963 -> 1823 -> 1842 -> 1849 -> 1891 -> 1892 -> 1935 -> 1943
-        assertEquals(1943, scan2.carryOutSimulation(createArrivingTestOrders()));
+        assertEquals(1943, scan2.carryOutSimulation());
+
+        SCAN scan3= new SCAN(sneakyRequests());
+
         DiscSchedulingAlgorithm.currentHeadPosition = 53;
 
-        assertEquals(447, scan2.carryOutSimulation(sneakyRequests()));
+        assertEquals(447, scan3.carryOutSimulation());
     }
 
     @Test
     void CSCANTest() {
-        assertEquals(990, (new CSCAN()).carryOutSimulation(createQueue()));
+        assertEquals(990, (new CSCAN(createQueue())).carryOutSimulation());
 
         //test with arrival times
         DiscSchedulingAlgorithm.currentHeadPosition = 53;
         //0 -> 11 -> 948 -> 951 -> 959 -> 1003 -> 1045 -> 1052 -> 1071 -> 1096 -> 1736 -> 1931 -> 1948 -> 2002
-        assertEquals(1071, (new CSCAN()).carryOutSimulation(createArrivingTestOrders()));
+        assertEquals(1071, (new CSCAN(createArrivingTestOrders())).carryOutSimulation());
 
         DiscSchedulingAlgorithm.currentHeadPosition = 53;
-        assertEquals(447, (new CSCAN()).carryOutSimulation(sneakyRequests()));
+        assertEquals(447, (new CSCAN(sneakyRequests())).carryOutSimulation());
     }
 
     @Test
@@ -81,7 +84,7 @@ class DiscSchedulingAlgorithmTest {
 
         DiscSchedulingAlgorithm.currentHeadPosition = 53;
 
-        assertEquals(2448, (new FDSCAN()).carryOutSimulation(createPriorityTestRequests()));
+        assertEquals(2448, (new FDSCAN(createPriorityTestRequests())).carryOutSimulation());
 
         //TODO test 1 priority requests not executed in time
 
@@ -90,11 +93,11 @@ class DiscSchedulingAlgorithmTest {
     @Test
     void EDFTest() {
 
-        EDF edf1 = new EDF();
+        EDF edf1 = new EDF(createPriorityTestRequests());
 
         edf1.currentHeadPosition = 53;
 
-        assertEquals(2990, edf1.carryOutSimulation(createPriorityTestRequests()));
+        assertEquals(2990, edf1.carryOutSimulation());
         assertEquals(2, edf1.getExecutedAfterDeadline());
 
 

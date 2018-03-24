@@ -16,7 +16,11 @@ public abstract class DiscSchedulingAlgorithm {
 
     static int currentHeadPosition = (int) (Math.random() * MAX_ADDRESS) + 1;
 
-    ArrayList<DiscAccessRequest> requestsQueue = new ArrayList<>();
+    public ArrayList<DiscAccessRequest> getRequestsQueue() {
+        return requestsQueue;
+    }
+
+    private ArrayList<DiscAccessRequest> requestsQueue = new ArrayList<>();
 
     int executedAfterDeadline = 0;
 
@@ -24,6 +28,10 @@ public abstract class DiscSchedulingAlgorithm {
     int prevClock = -1;
 
     Direction currentDirection = Direction.RIGHT;
+
+    public DiscSchedulingAlgorithm(ArrayList<DiscAccessRequest> queue){
+        this.requestsQueue = queue;
+    }
 
     public static void setCurrentHeadPosition(int currentHeadPosition) {
         DiscSchedulingAlgorithm.currentHeadPosition = currentHeadPosition;
@@ -40,7 +48,7 @@ public abstract class DiscSchedulingAlgorithm {
      *
      * @return Sum of disc head movements
      */
-    public abstract long carryOutSimulation(ArrayList<DiscAccessRequest> requestsQueue) throws ImpossibleToSimulateException;
+    public abstract long carryOutSimulation() throws ImpossibleToSimulateException;
 
     /**
      * Method checks whether there was an disc access request in last cycle
@@ -81,21 +89,21 @@ public abstract class DiscSchedulingAlgorithm {
         return (req1.getInitialAddress() > 0 && req1.getInitialAddress() <= MAX_ADDRESS);
     }
 
-     boolean isDataInvalid(ArrayList<DiscAccessRequest> q) {
+    boolean isDataInvalid(ArrayList<DiscAccessRequest> q) {
         return (q == null || q.isEmpty());
     }
 
-    void notExecutedBeforeDeadline(DiscAccessRequest req1){
-        if(req1.getExecutionDeadline() > 0 && req1.getExecutionDeadline() < clock)
+    void notExecutedBeforeDeadline(DiscAccessRequest req1) {
+        if (req1.getExecutionDeadline() > 0 && req1.getExecutionDeadline() < clock)
             executedAfterDeadline++;
     }
 
-    int willRequestComeWithinThisCycle(DiscAccessRequest currentTarget){
+    int willRequestComeWithinThisCycle(DiscAccessRequest currentTarget) {
 
         int when = -1;
 
-        for( DiscAccessRequest request : requestsQueue){
-            if(request.getTimeOfArrival() > clock && request.getTimeOfArrival() < (clock + (Math.abs(currentTarget.getInitialAddress() - currentHeadPosition)) * HEAD_MOVE_TIME)){
+        for (DiscAccessRequest request : requestsQueue) {
+            if (request.getTimeOfArrival() > clock && request.getTimeOfArrival() < (clock + (Math.abs(currentTarget.getInitialAddress() - currentHeadPosition)) * HEAD_MOVE_TIME)) {
                 when = request.getTimeOfArrival();
                 break;
             }
@@ -104,12 +112,12 @@ public abstract class DiscSchedulingAlgorithm {
     }
 
 
-    void moveTo(int time, DiscAccessRequest currentRequest){
-        sumOfHeadMovements += (time - clock)/HEAD_MOVE_TIME;
-        if(currentHeadPosition > currentRequest.getInitialAddress()){
-            currentHeadPosition -= (time - clock)/HEAD_MOVE_TIME;
+    void moveTo(int time, DiscAccessRequest currentRequest) {
+        sumOfHeadMovements += (time - clock) / HEAD_MOVE_TIME;
+        if (currentHeadPosition > currentRequest.getInitialAddress()) {
+            currentHeadPosition -= (time - clock) / HEAD_MOVE_TIME;
         } else {
-            currentHeadPosition += (time - clock)/HEAD_MOVE_TIME;
+            currentHeadPosition += (time - clock) / HEAD_MOVE_TIME;
         }
         prevClock = clock;
         clock = time;
@@ -122,11 +130,12 @@ public abstract class DiscSchedulingAlgorithm {
     public long getSumOfHeadMovements() {
         return sumOfHeadMovements;
     }
-     void reset(){
-         sumOfHeadMovements = 0;
-         clock = 0;
-         prevClock = -1;
-         currentDirection = Direction.RIGHT;
-         executedAfterDeadline = 0;
-     }
+
+    void reset() {
+        sumOfHeadMovements = 0;
+        clock = 0;
+        prevClock = -1;
+        currentDirection = Direction.RIGHT;
+        executedAfterDeadline = 0;
+    }
 }
