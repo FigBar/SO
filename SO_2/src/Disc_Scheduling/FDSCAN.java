@@ -19,6 +19,8 @@ public class FDSCAN extends DiscSchedulingAlgorithm {
             throw new ImpossibleToSimulateException();
         }
 
+        this.requestsQueue = requestsQueue;
+
         //sorting requests by time of arrival
         Collections.sort(requestsQueue, DiscAccessRequest::compareByTimeOfArrival);
 
@@ -54,9 +56,9 @@ public class FDSCAN extends DiscSchedulingAlgorithm {
                             availablePriority.add(request);
                         }
                         if (!correctDirectionPriority.contains(request)) {
-                            if(currentDirection == Direction.RIGHT && currentHeadPosition <= request.getInitialAddress()){
+                            if (currentDirection == Direction.RIGHT && currentHeadPosition <= request.getInitialAddress()) {
                                 correctDirectionPriority.add(request);
-                            } else if(currentDirection == Direction.LEFT && request.getInitialAddress() <= currentHeadPosition){
+                            } else if (currentDirection == Direction.LEFT && request.getInitialAddress() <= currentHeadPosition) {
                                 correctDirectionPriority.add(request);
                             }
                         }
@@ -65,9 +67,9 @@ public class FDSCAN extends DiscSchedulingAlgorithm {
             });
 
             availableRequests.forEach(request -> {
-                if(currentDirection == Direction.RIGHT && currentHeadPosition < request.getInitialAddress()){
+                if (currentDirection == Direction.RIGHT && currentHeadPosition <= request.getInitialAddress()) {
                     correctDirectionRequests.add(request);
-                } else if (currentDirection == Direction.LEFT && request.getInitialAddress() < currentHeadPosition){
+                } else if (currentDirection == Direction.LEFT && request.getInitialAddress() <= currentHeadPosition) {
                     correctDirectionRequests.add(request);
                 }
             });
@@ -105,8 +107,8 @@ public class FDSCAN extends DiscSchedulingAlgorithm {
 
             int requestComing = willRequestComeWithinThisCycle(currentRequest);
 
-            if (requestComing != -1){
-                moveTo(requestComing,currentRequest);
+            if (requestComing != -1) {
+                moveTo(requestComing, currentRequest);
             } else {
                 //checking if the request is addressable
                 if (isTheAccessRequestValid(currentRequest)) {
@@ -139,6 +141,7 @@ public class FDSCAN extends DiscSchedulingAlgorithm {
                         correctDirectionPriority.remove(currentRequest);
                     }
                 }
+                correctDirectionRequests.clear();
             }
         }
         return super.getSumOfHeadMovements();
