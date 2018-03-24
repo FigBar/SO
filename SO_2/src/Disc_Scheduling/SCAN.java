@@ -66,11 +66,15 @@ public class SCAN extends DiscSchedulingAlgorithm {
                     //the head moves right
                     if (currentDirection == Direction.RIGHT) {
                         if (request.getInitialAddress() > currentHeadPosition)
-                            requestsInCurrentDirection.add(request);
+                            if(!requestsInCurrentDirection.contains(request)) {
+                                requestsInCurrentDirection.add(request);
+                            }
                         //the head moves left
                     } else {
                         if (request.getInitialAddress() < currentHeadPosition)
-                            requestsInCurrentDirection.add(request);
+                            if(!requestsInCurrentDirection.contains(request)) {
+                                requestsInCurrentDirection.add(request);
+                            }
                     }
                 });
 
