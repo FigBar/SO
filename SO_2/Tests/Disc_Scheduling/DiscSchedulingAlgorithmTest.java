@@ -19,7 +19,7 @@ class DiscSchedulingAlgorithmTest {
     }
 
     @Test
-    void FCFSTest(){
+    void FCFSTest() {
         assertEquals(559, (new FCFS()).carryOutSimulation(createQueue()));
         DiscSchedulingAlgorithm.currentHeadPosition = 53;
 
@@ -29,20 +29,26 @@ class DiscSchedulingAlgorithmTest {
     }
 
     @Test
-    void SSTFTest(){
+    void SSTFTest() {
         assertEquals(225, (new SSTF()).carryOutSimulation(createQueue()));
 
         DiscSchedulingAlgorithm.currentHeadPosition = 53;
         //test with arrival times
         //0 -> 11 -> 63 -> 71 -> 165 -> 172 -> 216 -> 856 -> 1051 -> 1911 -> 1979 -> 1980
-        assertEquals(1980, (new SSTF()).carryOutSimulation(createArrivingTestOrders()));
+        assertEquals(2248, (new SSTF()).carryOutSimulation(createArrivingTestOrders()));
+
+        DiscSchedulingAlgorithm.currentHeadPosition = 53;
+
+        assertEquals(447, (new SSTF()).carryOutSimulation(sneakyRequests()));
     }
 
     @Test
-    void SCANTest(){
+    void SCANTest() {
         SCAN scan1 = new SCAN();
         scan1.currentDirection = Direction.LEFT;
-        assertEquals(229, scan1.carryOutSimulation(createQueue()));
+
+        //TODO calculate for algorithm beginning in RIGHT;
+        assertEquals(1973, scan1.carryOutSimulation(createQueue()));
 
 
         //test with arrival times
@@ -52,20 +58,26 @@ class DiscSchedulingAlgorithmTest {
         scan2.currentDirection = Direction.RIGHT;
         //0 -> 11 -> 96 -> 736 -> 963 -> 1823 -> 1842 -> 1849 -> 1891 -> 1892 -> 1935 -> 1943
         assertEquals(1943, scan2.carryOutSimulation(createArrivingTestOrders()));
+        DiscSchedulingAlgorithm.currentHeadPosition = 53;
+
+        assertEquals(447, scan2.carryOutSimulation(sneakyRequests()));
     }
 
     @Test
-    void CSCANTest(){
+    void CSCANTest() {
         assertEquals(990, (new CSCAN()).carryOutSimulation(createQueue()));
 
         //test with arrival times
         DiscSchedulingAlgorithm.currentHeadPosition = 53;
         //0 -> 11 -> 948 -> 951 -> 959 -> 1003 -> 1045 -> 1052 -> 1071 -> 1096 -> 1736 -> 1931 -> 1948 -> 2002
-        assertEquals(2002, (new CSCAN()).carryOutSimulation(createArrivingTestOrders()));
+        assertEquals(1071, (new CSCAN()).carryOutSimulation(createArrivingTestOrders()));
+
+        DiscSchedulingAlgorithm.currentHeadPosition = 53;
+        assertEquals(447, (new CSCAN()).carryOutSimulation(sneakyRequests()));
     }
 
     @Test
-    void FDSCANTest(){
+    void FDSCANTest() {
 
         DiscSchedulingAlgorithm.currentHeadPosition = 53;
 
@@ -76,23 +88,27 @@ class DiscSchedulingAlgorithmTest {
     }
 
     @Test
-    void EDFTest(){
-        DiscSchedulingAlgorithm.currentHeadPosition = 53;
+    void EDFTest() {
 
-        assertEquals(2990, (new EDF()).carryOutSimulation(createPriorityTestRequests()));
+        EDF edf1 = new EDF();
 
-        //TODO test 2 priority requests not executed in time
+        edf1.currentHeadPosition = 53;
+
+        assertEquals(2990, edf1.carryOutSimulation(createPriorityTestRequests()));
+        assertEquals(2, edf1.getExecutedAfterDeadline());
+
+
     }
 
-    private ArrayList<DiscAccessRequest> createQueue(){
+    private ArrayList<DiscAccessRequest> createQueue() {
         ArrayList<DiscAccessRequest> requestsQueue = new ArrayList<>();
-        requestsQueue.add(new DiscAccessRequest(24,0));
-        requestsQueue.add(new DiscAccessRequest(12,0));
-        requestsQueue.add(new DiscAccessRequest(99,0));
-        requestsQueue.add(new DiscAccessRequest(174,0));
-        requestsQueue.add(new DiscAccessRequest(5,0));
-        requestsQueue.add(new DiscAccessRequest(209,0));
-        requestsQueue.add(new DiscAccessRequest(199,0));
+        requestsQueue.add(new DiscAccessRequest(24, 0));
+        requestsQueue.add(new DiscAccessRequest(12, 0));
+        requestsQueue.add(new DiscAccessRequest(99, 0));
+        requestsQueue.add(new DiscAccessRequest(174, 0));
+        requestsQueue.add(new DiscAccessRequest(5, 0));
+        requestsQueue.add(new DiscAccessRequest(209, 0));
+        requestsQueue.add(new DiscAccessRequest(199, 0));
 
         return requestsQueue;
     }
@@ -118,16 +134,24 @@ class DiscSchedulingAlgorithmTest {
     private ArrayList<DiscAccessRequest> createPriorityTestRequests() {
         ArrayList<DiscAccessRequest> requestsQueue = new ArrayList<>();
 
-        requestsQueue.add(new DiscAccessRequest(109,0));
-        requestsQueue.add(new DiscAccessRequest(69,0,10));
-        requestsQueue.add(new DiscAccessRequest(54,0,30));
-        requestsQueue.add(new DiscAccessRequest(564,23,1000));
-        requestsQueue.add(new DiscAccessRequest(614,25,900));
-        requestsQueue.add(new DiscAccessRequest(314,1050));
-        requestsQueue.add(new DiscAccessRequest(505,1100));
-        requestsQueue.add(new DiscAccessRequest(813,1200, 2000));
-        requestsQueue.add(new DiscAccessRequest(5,1200));
+        requestsQueue.add(new DiscAccessRequest(109, 0));
+        requestsQueue.add(new DiscAccessRequest(69, 0, 10));
+        requestsQueue.add(new DiscAccessRequest(54, 0, 30));
+        requestsQueue.add(new DiscAccessRequest(564, 23, 1000));
+        requestsQueue.add(new DiscAccessRequest(614, 25, 900));
+        requestsQueue.add(new DiscAccessRequest(314, 1050));
+        requestsQueue.add(new DiscAccessRequest(505, 1100));
+        requestsQueue.add(new DiscAccessRequest(813, 1200, 2000));
+        requestsQueue.add(new DiscAccessRequest(5, 1200));
 
         return requestsQueue;
+    }
+
+    private ArrayList<DiscAccessRequest> sneakyRequests() {
+        ArrayList<DiscAccessRequest> queue = new ArrayList<>();
+        queue.add(new DiscAccessRequest(500, 0));
+        queue.add(new DiscAccessRequest(300, 1));
+
+        return queue;
     }
 }
