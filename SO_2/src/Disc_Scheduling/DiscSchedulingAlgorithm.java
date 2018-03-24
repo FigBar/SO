@@ -5,6 +5,7 @@ import Disc_Scheduling.Direction.Direction;
 import Exceptions.ImpossibleToSimulateException;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public abstract class DiscSchedulingAlgorithm {
 
@@ -15,12 +16,18 @@ public abstract class DiscSchedulingAlgorithm {
 
     static int currentHeadPosition = (int) (Math.random() * MAX_ADDRESS) + 1;
 
+    ArrayList<DiscAccessRequest> requestsQueue = new ArrayList<>();
+
     int executedAfterDeadline = 0;
 
     int clock = 0;
     int prevClock = -1;
 
     Direction currentDirection = Direction.RIGHT;
+
+    public static void setCurrentHeadPosition(int currentHeadPosition) {
+        DiscSchedulingAlgorithm.currentHeadPosition = currentHeadPosition;
+    }
 
 
     void addToSumOfHeadMovements(int movement) {
@@ -79,8 +86,37 @@ public abstract class DiscSchedulingAlgorithm {
     }
 
     void notExecutedBeforeDeadline(DiscAccessRequest req1){
-        if(req1.getExecutionDeadline() > 0 && req1.getExecutionDeadline() > clock)
+        if(req1.getExecutionDeadline() > 0 && req1.getExecutionDeadline() < clock)
             executedAfterDeadline++;
+    }
+
+    int willRequestComeWithinThisCycle(DiscAccessRequest currentTarget){
+
+        int when = -1;
+
+        for( DiscAccessRequest request : requestsQueue){
+            if(request.getTimeOfArrival() > clock && request.getTimeOfArrival() < (clock + (Math.abs(currentTarget.getInitialAddress() - currentHeadPosition)) * HEAD_MOVE_TIME)){
+                when = request.getTimeOfArrival();
+                break;
+            }
+        }
+        return when;
+    }
+
+
+    void moveTo(int time, DiscAccessRequest currentRequest){
+        sumOfHeadMovements += (time - clock)/HEAD_MOVE_TIME;
+        if(currentHeadPosition > currentRequest.getInitialAddress()){
+            currentHeadPosition -= (time - clock)/HEAD_MOVE_TIME;
+        } else {
+            currentHeadPosition += (time - clock)/HEAD_MOVE_TIME;
+        }
+        prevClock = clock;
+        clock = time;
+    }
+
+    public int getExecutedAfterDeadline() {
+        return executedAfterDeadline;
     }
 
     public long getSumOfHeadMovements() {

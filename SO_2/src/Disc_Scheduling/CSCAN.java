@@ -26,6 +26,8 @@ public class CSCAN extends DiscSchedulingAlgorithm {
             throw new ImpossibleToSimulateException();
         }
 
+        this.requestsQueue = requestsQueue;
+
         //sorting requests by time of arrival
         Collections.sort(requestsQueue, DiscAccessRequest::compareByTimeOfArrival);
 
@@ -65,37 +67,50 @@ public class CSCAN extends DiscSchedulingAlgorithm {
                 //when there are no requests ahead of disc head
                 //it has to come  back to the start
                 if (requestsInDirection.isEmpty()) {
-                    prevClock = clock;
-                    clock += ((MAX_ADDRESS - currentHeadPosition) + 1) * HEAD_MOVE_TIME;
-                    super.addToSumOfHeadMovements((MAX_ADDRESS - currentHeadPosition) + 1);
-                    currentHeadPosition = 1;
+                    DiscAccessRequest helper = new DiscAccessRequest(MAX_ADDRESS, 0);
+                    int newRequestComing = willRequestComeWithinThisCycle(helper);
+                    if(newRequestComing == -1) {
+                        prevClock = clock;
+                        clock += ((MAX_ADDRESS - currentHeadPosition) + 1) * HEAD_MOVE_TIME;
+                        super.addToSumOfHeadMovements((MAX_ADDRESS - currentHeadPosition) + 1);
+                        currentHeadPosition = 1;
+                    } else{
+                        moveTo(newRequestComing, helper);
+                    }
                 } else { //there are requests ahead of disc head
 
                     //finding the nearest request in directional queue
                     currentRequest = findNearestRequests(requestsInDirection, currentHeadPosition);
 
-                    //checking if the request is valid
-                    if (isTheAccessRequestValid(currentRequest)) {
+                    int newRequestComing = willRequestComeWithinThisCycle(currentRequest);
 
-                        //calculating head movement and adding it to sum
-                        super.addToSumOfHeadMovements(calcHeadMovement(currentRequest));
+                    if(newRequestComing == -1) {
 
-                        //start of cycle
-                        prevClock = clock;
-                        //end of cycle
-                        clock += calcHeadMovement(currentRequest) * HEAD_MOVE_TIME;
+                        //checking if the request is valid
+                        if (isTheAccessRequestValid(currentRequest)) {
 
-                        // check for requests with deadlines
-                        notExecutedBeforeDeadline(currentRequest);
+                            //calculating head movement and adding it to sum
+                            super.addToSumOfHeadMovements(calcHeadMovement(currentRequest));
 
-                        //setting new position of disc head
-                        currentHeadPosition = currentRequest.getInitialAddress();
+                            //start of cycle
+                            prevClock = clock;
+                            //end of cycle
+                            clock += calcHeadMovement(currentRequest) * HEAD_MOVE_TIME;
 
-                        //request execution is finished
-                        //so remove it from all queues
-                        requestsInDirection.remove(currentRequest);
-                        availableRequests.remove(currentRequest);
-                        requestsQueue.remove(currentRequest);
+                            // check for requests with deadlines
+                            notExecutedBeforeDeadline(currentRequest);
+
+                            //setting new position of disc head
+                            currentHeadPosition = currentRequest.getInitialAddress();
+
+                            //request execution is finished
+                            //so remove it from all queues
+                            requestsInDirection.remove(currentRequest);
+                            availableRequests.remove(currentRequest);
+                            requestsQueue.remove(currentRequest);
+                        }
+                    } else {
+                        moveTo(newRequestComing,currentRequest);
                     }
                 }
             }

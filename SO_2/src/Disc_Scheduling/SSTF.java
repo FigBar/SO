@@ -26,6 +26,8 @@ public class SSTF extends DiscSchedulingAlgorithm {
             throw new ImpossibleToSimulateException();
         }
 
+        this.requestsQueue = requestsQueue;
+
         //sorting requests by time of arrival
         Collections.sort(requestsQueue, DiscAccessRequest::compareByTimeOfArrival);
 
@@ -54,30 +56,39 @@ public class SSTF extends DiscSchedulingAlgorithm {
                 //taking the nearest request in the available queue
                 currentRequest = findNearestRequests(availableRequests, currentHeadPosition);
 
-                //checking if the request is addressable
-                if (isTheAccessRequestValid(currentRequest)) {
+                //checking if new better accessible processes are coming until head arrives destination
+                int newRequestComing = willRequestComeWithinThisCycle(currentRequest);
 
-                    //calculating the movement of disk head
-                    //which is | request initial address - current head position |
-                    //then adding it to the sum of head movements
-                    super.addToSumOfHeadMovements(calcHeadMovement(currentRequest));
+                //when there are no better choices
+                if (newRequestComing == -1) {
 
-                    //setting start of cycle time;
-                    prevClock = clock;
+                    //checking if the request is addressable
+                    if (isTheAccessRequestValid(currentRequest)) {
 
-                    //setting end of cycle time;
-                    clock += calcHeadMovement(currentRequest) * HEAD_MOVE_TIME;
+                        //calculating the movement of disk head
+                        //which is | request initial address - current head position |
+                        //then adding it to the sum of head movements
+                        super.addToSumOfHeadMovements(calcHeadMovement(currentRequest));
 
-                    // check for requests with deadlines
-                    notExecutedBeforeDeadline(currentRequest);
+                        //setting start of cycle time;
+                        prevClock = clock;
 
-                    //setting the head's position on current request's initial address
-                    currentHeadPosition = currentRequest.getInitialAddress();
+                        //setting end of cycle time;
+                        clock += calcHeadMovement(currentRequest) * HEAD_MOVE_TIME;
 
-                    //requests is handled so removing it from both queues
-                    availableRequests.remove(currentRequest);
-                    requestsQueue.remove(currentRequest);
+                        // check for requests with deadlines
+                        notExecutedBeforeDeadline(currentRequest);
 
+                        //setting the head's position on current request's initial address
+                        currentHeadPosition = currentRequest.getInitialAddress();
+
+                        //requests is handled so removing it from both queues
+                        availableRequests.remove(currentRequest);
+                        requestsQueue.remove(currentRequest);
+
+                    }
+                } else { //better choices appeared
+                    moveTo(newRequestComing, currentRequest);
                 }
             }
         }

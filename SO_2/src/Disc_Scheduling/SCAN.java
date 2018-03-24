@@ -26,6 +26,7 @@ public class SCAN extends DiscSchedulingAlgorithm {
         if (isDataInvalid(requestsQueue)) {
             throw new ImpossibleToSimulateException();
         }
+        this.requestsQueue = requestsQueue;
 
         //sorting requests by time of arrival
         Collections.sort(requestsQueue, DiscAccessRequest::compareByTimeOfArrival);
@@ -93,28 +94,36 @@ public class SCAN extends DiscSchedulingAlgorithm {
                     //finding the nearest request in directional queue
                     currentRequest = findNearestRequests(requestsInCurrentDirection, currentHeadPosition);
 
-                    //checking if the request is valid
-                    if (isTheAccessRequestValid(currentRequest)) {
+                    //checking if new better accessible processes are coming until head arrives destination
+                    int newRequestComing = willRequestComeWithinThisCycle(currentRequest);
 
-                        //calculating head movement and adding it to sum
-                        super.addToSumOfHeadMovements(calcHeadMovement(currentRequest));
+                    if(newRequestComing == -1) {
 
-                        //start of cycle
-                        prevClock = clock;
-                        //end of cycle
-                        clock += calcHeadMovement(currentRequest) * HEAD_MOVE_TIME;
+                        //checking if the request is valid
+                        if (isTheAccessRequestValid(currentRequest)) {
 
-                        // check for requests with deadlines
-                        notExecutedBeforeDeadline(currentRequest);
+                            //calculating head movement and adding it to sum
+                            super.addToSumOfHeadMovements(calcHeadMovement(currentRequest));
 
-                        //setting new position of head
-                        currentHeadPosition = currentRequest.getInitialAddress();
+                            //start of cycle
+                            prevClock = clock;
+                            //end of cycle
+                            clock += calcHeadMovement(currentRequest) * HEAD_MOVE_TIME;
 
-                        //execution of request is finished
-                        //so remove it from all queues
-                        requestsInCurrentDirection.remove(currentRequest);
-                        availableRequests.remove(currentRequest);
-                        requestsQueue.remove(currentRequest);
+                            // check for requests with deadlines
+                            notExecutedBeforeDeadline(currentRequest);
+
+                            //setting new position of head
+                            currentHeadPosition = currentRequest.getInitialAddress();
+
+                            //execution of request is finished
+                            //so remove it from all queues
+                            requestsInCurrentDirection.remove(currentRequest);
+                            availableRequests.remove(currentRequest);
+                            requestsQueue.remove(currentRequest);
+                        }
+                    } else{
+                        moveTo(newRequestComing,currentRequest);
                     }
                 }
             }

@@ -19,6 +19,8 @@ public class EDF extends DiscSchedulingAlgorithm {
             throw new ImpossibleToSimulateException();
         }
 
+        this.requestsQueue = requestsQueue;
+
         //sorting requests by time of arrival
         Collections.sort(requestsQueue, DiscAccessRequest::compareByTimeOfArrival);
 

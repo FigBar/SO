@@ -1,5 +1,7 @@
 package Disc_Access;
 
+import Disc_Scheduling.DiscSchedulingAlgorithm;
+
 public class DiscAccessRequest {
 
     private static int accessNumber = 0;
@@ -23,6 +25,10 @@ public class DiscAccessRequest {
 
     private static int assignAccessNumber(){
         return ++accessNumber;
+    }
+
+    public static int compareByInitialAddress(DiscAccessRequest req1, DiscAccessRequest req2){
+        return Integer.compare(req1.initialAddress,req2.initialAddress);
     }
 
     public static int compareByTimeOfArrival(DiscAccessRequest req1, DiscAccessRequest req2){
