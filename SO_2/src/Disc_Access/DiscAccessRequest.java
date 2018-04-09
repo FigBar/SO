@@ -20,7 +20,7 @@ public class DiscAccessRequest {
 
     public DiscAccessRequest(int initialAddress, int timeOfArrival, int executionDeadline){
         this(initialAddress, timeOfArrival);
-        this.executionDeadline = executionDeadline;
+        this.executionDeadline = timeOfArrival + executionDeadline;
     }
 
     private static int assignAccessNumber(){

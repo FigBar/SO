@@ -12,6 +12,7 @@ public class Run {
     private static int requestsAmount;
     private static int maxArrivalTime;
     private static int deadlinesAmount;
+    private static int startPosition;
 
     private static int minDeadline;
     private static int maxDeadline;
@@ -46,6 +47,7 @@ public class Run {
         System.out.println("\n" + "Number of requests in simulation: " + requestsAmount);
         System.out.println("\n" + "Number of real-time requests in simulation: " + deadlinesAmount);
         System.out.println("\n" + "Maximum arrival time of request: " + maxArrivalTime);
+        System.out.println("\n" + "Starting position of disc's head: " + startPosition);
 
 
         for (int i = 0; i < accuracy; i++) {
@@ -54,12 +56,12 @@ public class Run {
             ArrayList<DiscSchedulingAlgorithm> algorithms = new ArrayList<>();
             ArrayList<DiscAccessRequest> requestsQueue = generateQueue(requestsAmount, deadlinesAmount, maxArrivalTime, maxDeadline, minDeadline);
 
-            algorithms.add(new FCFS(new ArrayList<>(requestsQueue)));
-            algorithms.add(new SSTF(new ArrayList<>(requestsQueue)));
-            algorithms.add(new SCAN(new ArrayList<>(requestsQueue)));
-            algorithms.add(new CSCAN(new ArrayList<>(requestsQueue)));
-            algorithms.add(new EDF(new ArrayList<>(requestsQueue)));
-            algorithms.add(new FDSCAN(new ArrayList<>(requestsQueue)));
+            algorithms.add(new FCFS(startPosition));
+            algorithms.add(new SSTF(startPosition));
+            algorithms.add(new SCAN(startPosition));
+            algorithms.add(new CSCAN(startPosition));
+            algorithms.add(new EDF(startPosition));
+            algorithms.add(new FDSCAN(startPosition));
 
 
             System.out.println("\n" + "--Simulation-- " + i);
@@ -69,7 +71,7 @@ public class Run {
             for (DiscSchedulingAlgorithm algorithm : algorithms) {
 
 
-                algorithm.carryOutSimulation();
+                algorithm.carryOutSimulation(new ArrayList<>(requestsQueue));
 
                 System.out.print(
                         algorithm.getClass().getSimpleName() +
@@ -157,11 +159,14 @@ public class Run {
         System.out.println("Provide the number of disc access requests in the queue: ");
         requestsAmount = getNumberBetween(1, 1000);
 
+        System.out.println("Provide disc's head starting position: ");
+        startPosition = getNumberBetween(1, 1000);
+
         System.out.println("\n" + "How many requests of all should have deadlines: ");
         deadlinesAmount = getNumberBetween(1, (requestsAmount / 2));
 
         System.out.println("\n" + "Provide how late can a process arrive: ");
-        maxArrivalTime = getNumberBetween(100, 500 + (requestsAmount * 2));
+        maxArrivalTime = getNumberBetween(0, ((requestsAmount * DiscSchedulingAlgorithm.getMaxAddress())/4));
 
         System.out.println("\n" + "Provide maximum deadline of real-time request: ");
         maxDeadline = getNumberBetween(100, 10000);
@@ -175,9 +180,10 @@ public class Run {
     private static void generateData() {
         ArrayList<Process> queue = new ArrayList<>();
 
-        requestsAmount = (int) (Math.random() * 900) + 100;
+        requestsAmount = (int) (Math.random() * 1000) + 100;
+        startPosition = (int) (Math.random() * 1000) + 1;
         deadlinesAmount = (int) (Math.random() * (requestsAmount / 2)) + 1;
-        maxArrivalTime = (int) (Math.random() * (500 + (requestsAmount * 2)));
+        maxArrivalTime = (int) (Math.random() * ((requestsAmount * DiscSchedulingAlgorithm.getMaxAddress())/4));
 
         maxDeadline = (int) (Math.random() * maxArrivalTime) + 100;
         minDeadline = (int) (Math.random() * 98) + 1;
@@ -189,17 +195,17 @@ public class Run {
 
         for (int i = 0; i < (nOfRequests - nOfDeadlines); i++) {
             queue.add(new DiscAccessRequest(
-                    (int) (Math.random() * (1000 - 1)) + 1,
-                    (int) (Math.random() * (maxArrival - 1) + 1)
+                    (int) (Math.random() * (1000)) + 1,
+                    (int) (Math.random() * (maxArrival) + 1)
 
             ));
         }
 
         for (int i = 0; i < nOfDeadlines; i++) {
             queue.add(new DiscAccessRequest(
-                    (int) (Math.random() * (1000 - 1)) + 1,
-                    (int) (Math.random() * (maxArrival - 1) + 1),
-                    (int) (Math.random() * (maxDeadline - minDeadline)) + maxArrival
+                    (int) (Math.random() * (1000)) + 1,
+                    (int) (Math.random() * (maxArrival) + 1),
+                    (int) (Math.random() * (maxDeadline - minDeadline)) + minDeadline
 
             ));
         }

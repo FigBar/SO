@@ -20,71 +20,67 @@ class DiscSchedulingAlgorithmTest {
 
     @Test
     void FCFSTest() {
-        assertEquals(559, (new FCFS(createQueue())).carryOutSimulation());
+        assertEquals(559, (new FCFS(22)).carryOutSimulation(createQueue()));
         DiscSchedulingAlgorithm.currentHeadPosition = 53;
 
         //test with arrival times
         //0 -> 11 -> 63 -> 840 -> 1531 -> 1582 -> 1727 -> 1828 -> 1877 -> 1945 -> 2805 -> 3734
-        assertEquals(3734, (new FCFS(createArrivingTestOrders())).carryOutSimulation());
+        assertEquals(3734, (new FCFS(53)).carryOutSimulation(createArrivingTestOrders()));
     }
 
     @Test
     void SSTFTest() {
-        assertEquals(225, (new SSTF(createQueue())).carryOutSimulation());
+        assertEquals(225, (new SSTF(22)).carryOutSimulation(createQueue()));
 
-        DiscSchedulingAlgorithm.currentHeadPosition = 53;
+
         //test with arrival times
         //0 -> 11 -> 63 -> 71 -> 165 -> 172 -> 216 -> 856 -> 1051 -> 1911 -> 1979 -> 1980
-        assertEquals(2248, (new SSTF(createArrivingTestOrders())).carryOutSimulation());
+        assertEquals(2248, (new SSTF(53)).carryOutSimulation(createArrivingTestOrders()));
 
-        DiscSchedulingAlgorithm.currentHeadPosition = 53;
 
-        assertEquals(447, (new SSTF(sneakyRequests())).carryOutSimulation());
+
+        assertEquals(447, (new SSTF(53)).carryOutSimulation(sneakyRequests()));
     }
 
     @Test
     void SCANTest() {
-        SCAN scan1 = new SCAN(createQueue());
+        SCAN scan1 = new SCAN(22);
         scan1.currentDirection = Direction.LEFT;
 
 
-        assertEquals(1973, scan1.carryOutSimulation());
+        assertEquals(1973, scan1.carryOutSimulation(createQueue()));
 
 
         //test with arrival times
-        SCAN scan2 = new SCAN(createArrivingTestOrders());
+        SCAN scan2 = new SCAN(53);
 
-        DiscSchedulingAlgorithm.currentHeadPosition = 53;
+
         scan2.currentDirection = Direction.RIGHT;
         //0 -> 11 -> 96 -> 736 -> 963 -> 1823 -> 1842 -> 1849 -> 1891 -> 1892 -> 1935 -> 1943
-        assertEquals(1943, scan2.carryOutSimulation());
+        assertEquals(1943, scan2.carryOutSimulation(createArrivingTestOrders()));
 
-        SCAN scan3= new SCAN(sneakyRequests());
-
-        DiscSchedulingAlgorithm.currentHeadPosition = 53;
-
-        assertEquals(447, scan3.carryOutSimulation());
+        SCAN scan3= new SCAN(53);
+        assertEquals(447, scan3.carryOutSimulation(sneakyRequests()));
     }
 
     @Test
     void CSCANTest() {
-        assertEquals(990, (new CSCAN(createQueue())).carryOutSimulation());
+        assertEquals(990, (new CSCAN(22)).carryOutSimulation(createQueue()));
 
         //test with arrival times
-        DiscSchedulingAlgorithm.currentHeadPosition = 53;
-        //0 -> 11 -> 948 -> 951 -> 959 -> 1003 -> 1045 -> 1052 -> 1071 -> 1096 -> 1736 -> 1931 -> 1948 -> 2002
-        assertEquals(1071, (new CSCAN(createArrivingTestOrders())).carryOutSimulation());
 
-        DiscSchedulingAlgorithm.currentHeadPosition = 53;
-        assertEquals(447, (new CSCAN(sneakyRequests())).carryOutSimulation());
+        //0 -> 11 -> 948 -> 951 -> 959 -> 1003 -> 1045 -> 1052 -> 1071 -> 1096 -> 1736 -> 1931 -> 1948 -> 2002
+        assertEquals(1071, (new CSCAN(53)).carryOutSimulation(createArrivingTestOrders()));
+
+
+        assertEquals(447, (new CSCAN(53)).carryOutSimulation(sneakyRequests()));
     }
 
     @Test
     void FDSCANTest() {
 
-        DiscSchedulingAlgorithm.currentHeadPosition = 53;
 
-        assertEquals(2448, (new FDSCAN(createPriorityTestRequests())).carryOutSimulation());
+        assertEquals(1942, (new FDSCAN(53)).carryOutSimulation(createPriorityTestRequests()));
 
         //TODO test 1 priority requests not executed in time
 
@@ -93,12 +89,11 @@ class DiscSchedulingAlgorithmTest {
     @Test
     void EDFTest() {
 
-        EDF edf1 = new EDF(createPriorityTestRequests());
+        EDF edf1 = new EDF(53);
 
-        edf1.currentHeadPosition = 53;
 
-        assertEquals(2990, edf1.carryOutSimulation());
-        assertEquals(2, edf1.getExecutedAfterDeadline());
+        assertEquals(1868, edf1.carryOutSimulation(createPriorityTestRequests()));
+        assertEquals(1, edf1.getExecutedAfterDeadline());
 
 
     }
